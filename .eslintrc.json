@@ -3,6 +3,7 @@
         "browser": true,
         "es2021": true
     },
+    "parser": "@typescript-eslint/parser",
     "extends": [
         "plugin:react/recommended",
     //    "airbnb",
@@ -13,22 +14,30 @@
         "ecmaVersion": "latest"
     },
     "plugins": [
-        "react", "prettier", "react-hooks"
+        "react",
+        "prettier",
+        "react-hooks",
+        "@typescript-eslint"
     ],
     "rules": {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "error",
+        "no-confusing-arrow": ["error", { "allowParens": false }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
+        "react/jsx-filename-extension":[1, { "extensions": [".jsx",".tsx"] }],
         "prettier/prettier": [
             "error",
             {
-              "printWidth": 80,
-              "trailingComma": "es5",
-              "semi": false,
-              "jsxSingleQuote": true,
-              "singleQuote": true,
-              "useTabs": true
+                "printWidth": 80,
+                "trailingComma": "es5",
+                "semi": false,
+                "jsxSingleQuote": true,
+                "singleQuote": true,
+                "useTabs": true,
+                "allowParens":true
             }
-          ]
-      
+            ],
+        "@typescript-eslint/explicit-function-return-type": [
+            "error"
+        ]
     }
 }
